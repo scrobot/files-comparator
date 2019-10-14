@@ -1,0 +1,13 @@
+.Sidebar {
+    margin-top: 0;
+    min-height: 100vmin;
+    height: 100%;
+    width: 175px;
+    text-align: center;
+    background-color: #2c384e;
+}
+
+.Sidebar a {
+    display: block;
+    padding-top: 10px;
+}
