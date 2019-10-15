@@ -1,0 +1,17 @@
+.label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    display: inline-block;
+    background: rgb(218, 218, 218);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: all 0.2s ease 0s;
+}
+
+.home-form textarea {
+    min-height: 200px;
+}
+
+.home-button-container {
+    text-align: center;
+}

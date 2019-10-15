@@ -1,14 +1,13 @@
 import React from 'react';
-import "../css/Home.css"
+import WelcomeCard from "../base/WelcomeCard";
 
 const UploadPage: React.FC = () => {
     return (
-        <div className="welcome-board">
-            <img className="icon" src={process.env.PUBLIC_URL + '/files.svg'}/>
-            <div className="content">
-                <h1>Upload and compare files</h1>
-                <p>Compare the difference between pictures or other files! <br/>Enter two images and the difference will show up below.</p>
-            </div>
+        <div>
+            <WelcomeCard
+                title="Upload and compare files"
+                text={["Compare the difference between pictures or other files!", "Enter two images and the difference will show up below."]}
+            />
         </div>
     );
 };

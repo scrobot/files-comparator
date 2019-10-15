@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom'
-import HomePage from "../home/HomePage";
 import UploadPage from "../upload/UploadPage";
 import UrlPage from "../url/UrlPage";
 import TermsPage from "../terms/TermsPage";
 import PrivacyPolicyPage from "../privacy/PrivacyPolicyPage";
+import HomePage from "../home/HomePage";
 
 const Body: React.FC = () => {
     return (
