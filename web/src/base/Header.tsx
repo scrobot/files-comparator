@@ -1,5 +1,6 @@
 import React from 'react';
 import "../css/Header.css"
+import { Link } from 'react-router-dom'
 import {Nav, Navbar, NavbarBrand, NavItem, NavLink} from 'reactstrap';
 
 const Header: React.FC = () => {
@@ -12,13 +13,13 @@ const Header: React.FC = () => {
                     </NavbarBrand>
                     <Nav className="float-md-left" navbar>
                         <NavItem>
-                            <NavLink href="/">Home</NavLink>
+                            <Link className="nav-link" to="/">Home</Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/upload">Upload</NavLink>
+                            <Link className="nav-link" to="/upload">Upload</Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/url">Url</NavLink>
+                            <Link className="nav-link" to="/url">Url</Link>
                         </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>

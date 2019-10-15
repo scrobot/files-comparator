@@ -2,6 +2,9 @@ import React from "react";
 import { Route, Switch } from 'react-router-dom'
 import HomePage from "../home/HomePage";
 import UploadPage from "../upload/UploadPage";
+import UrlPage from "../url/UrlPage";
+import TermsPage from "../terms/TermsPage";
+import PrivacyPolicyPage from "../privacy/PrivacyPolicyPage";
 
 const Body: React.FC = () => {
     return (
@@ -9,6 +12,9 @@ const Body: React.FC = () => {
             <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route path="/upload" component={UploadPage} />
+                <Route path="/url" component={UrlPage} />
+                <Route path="/terms" component={TermsPage} />
+                <Route path="/privacy" component={PrivacyPolicyPage} />
             </Switch>
         </div>
     );

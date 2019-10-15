@@ -1,0 +1,15 @@
+.footer {
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.footer span {
+    display: inline-block;
+    margin: 0 4px 0 4px;
+}
+
+.footer span p {
+    margin: 0;
+}
