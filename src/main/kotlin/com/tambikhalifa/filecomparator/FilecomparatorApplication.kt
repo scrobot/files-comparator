@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class FilecomparatorApplication
 
 fun main(args: Array<String>) {
-	runApplication<FilecomparatorApplication>(*args)
+    runApplication<FilecomparatorApplication>(*args)
 }
