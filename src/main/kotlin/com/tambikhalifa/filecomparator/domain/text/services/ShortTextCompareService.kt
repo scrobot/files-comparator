@@ -1,14 +1,16 @@
-package com.tambikhalifa.filecomparator.domain.text
+package com.tambikhalifa.filecomparator.domain.text.services
 
+import com.tambikhalifa.filecomparator.domain.text.TextCompareService
 import com.tambikhalifa.filecomparator.domain.text.entities.TextComparisonResult
+import org.springframework.stereotype.Service
 
+@Service
 class ShortTextCompareService : TextCompareService {
     
     override fun compare(target: String, subject: String): TextComparisonResult {
         val compareMap = mutableMapOf<Int, Boolean>()
         
         target
-            .replace(" ", "")
             .toList()
             .forEachIndexed { index, c ->
                 if (subject.length <= index) return@forEachIndexed

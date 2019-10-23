@@ -6,14 +6,15 @@ data class TextComparisonTask(
         @Id val id: String,
         val sourceText: String,
         val targetText: String,
-        val subTasks: List<SubTask>,
-        val result: TaskResult? = null
+        val subTasks: MutableList<SubTask>,
+        var result: TaskResult? = null,
+        val createdAt: Long = System.currentTimeMillis()
 )
 
 data class SubTask(
         val sourceText: String,
         val targetText: String,
-        val taskProcess: TaskProcess? = null
+        var taskProcess: TaskProcess? = null
 )
 
 data class TaskProcess(
