@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
 
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
-data class TextComparisonResult(
+data class ResponseCompareText(
     @JsonProperty("target_incoming_length")
     val targetIncomingLength: Int = 0,
     @JsonProperty("subject_incoming_length")
