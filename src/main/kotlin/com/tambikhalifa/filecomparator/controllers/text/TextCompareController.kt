@@ -1,7 +1,6 @@
 package com.tambikhalifa.filecomparator.controllers.text
 
-import com.tambikhalifa.filecomparator.domain.exceptions.EmptyTargetException
-import com.tambikhalifa.filecomparator.domain.exceptions.NoTaskFoundById
+import com.tambikhalifa.filecomparator.domain.text.exceptions.EmptyTargetException
 import com.tambikhalifa.filecomparator.domain.text.services.LongTextCompareService
 import com.tambikhalifa.filecomparator.domain.text.services.ShortTextCompareService
 import com.tambikhalifa.filecomparator.domain.text.entities.ResponseCompareText

@@ -1,13 +1,14 @@
 package com.tambikhalifa.filecomparator.domain.text.services
 
 import com.tambikhalifa.filecomparator.data.text.TextComparisonRepository
-import com.tambikhalifa.filecomparator.domain.exceptions.NoTaskFoundById
+import com.tambikhalifa.filecomparator.domain.text.exceptions.NoTaskFoundById
 import com.tambikhalifa.filecomparator.domain.text.TextCompareService
 import com.tambikhalifa.filecomparator.domain.text.TextComparisonProcessor
 import com.tambikhalifa.filecomparator.domain.text.entities.SubTask
 import com.tambikhalifa.filecomparator.domain.text.entities.ResponseCompareText
 import com.tambikhalifa.filecomparator.domain.text.entities.ResponseTextComparisonTask
 import com.tambikhalifa.filecomparator.domain.text.entities.TextComparisonTask
+import com.tambikhalifa.filecomparator.extensions.chunkStrings
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -49,24 +50,16 @@ class LongTextCompareService(
         }
         .orElseThrow { NoTaskFoundById(id) }
     
-    private fun splitTargetToTasks(target: String, subject: String): List<SubTask> = target.chunked(SOURCE_STRING_CHUNK_SIZE)
-        .mapIndexed { index, source ->
-            val substringBegin = index * SOURCE_STRING_CHUNK_SIZE
-            val substringEnd = substringBegin + SOURCE_STRING_CHUNK_SIZE
-            
+    private fun splitTargetToTasks(target: String, subject: String): List<SubTask> = chunkStrings(target, subject, SOURCE_STRING_CHUNK_SIZE)
+        .map { (s, t) ->
             SubTask(
-                sourceText = source,
-                targetText = try {
-                    subject.substring(substringBegin, substringEnd)
-                } catch (e: StringIndexOutOfBoundsException) {
-                    EMPTY_STRING
-                }
+                sourceText = s,
+                targetText = t
             )
         }
     
     private companion object {
         const val SOURCE_STRING_CHUNK_SIZE = 500
-        const val EMPTY_STRING = ""
     }
     
 }

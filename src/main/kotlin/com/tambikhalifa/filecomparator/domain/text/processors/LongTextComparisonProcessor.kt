@@ -14,9 +14,9 @@ class LongTextComparisonProcessor(
     private val service: ShortTextCompareService
 ): TextComparisonProcessor {
     
-    private val executor = Executors.newFixedThreadPool(16)
-    
     override fun startHandleTextComparisonTask(id: String?) {
+        val executor = Executors.newFixedThreadPool(16)
+        
         id?.let(repository::findById)
             ?.ifPresent { task ->
                 task.subTasks.mapIndexed { index, subTask ->
