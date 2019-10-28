@@ -60,6 +60,7 @@ class LongTextCompareService(
     
     private companion object {
         const val SOURCE_STRING_CHUNK_SIZE = 500
+        const val EMPTY_STRING = ""
     }
     
 }

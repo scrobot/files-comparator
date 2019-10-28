@@ -19,7 +19,7 @@ export class WelcomeCard extends Component<Card> {
             <div className="content">
                 <h1>{this.props.title}</h1>
                 <p>
-                    {this.props.text.map(text => <span>{text}<br/></span>)}
+                    {this.props.text.map((text, index) => <span key={"id-" + index}>{text}<br/></span>)}
                 </p>
             </div>
         </div>

@@ -19,6 +19,7 @@ class TextCompareController(
     
     private val logger = LoggerFactory.getLogger(TextCompareController::class.java)
     
+    @CrossOrigin(origins = ["http://localhost:3001"])
     @PostMapping("compare")
     fun compareText(@RequestBody body: RequestCompareText): ResponseEntity<ResponseCompareText> = (body.firstText ?: "")
         .let { target ->
@@ -35,6 +36,7 @@ class TextCompareController(
             )
         }
     
+    @CrossOrigin(origins = ["http://localhost:3001"])
     @GetMapping("task-status/{id}")
     fun checkTaskStatus(@PathVariable("id") id: String): ResponseEntity<ResponseTextComparisonTask> = ResponseEntity(
         longTextCompareService.findTask(id),

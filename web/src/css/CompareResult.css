@@ -1,0 +1,38 @@
+.compare-result ul {
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.compare-result ul li {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+    font-size: 14px;
+    color: grey;
+}
+
+.compare-result ul li span {
+    color: green;
+}
+
+.compare-result .percents {
+    text-align: center;
+}
+
+.compare-result .percents .red {
+    color: red;
+}
+
+.compare-result .percents .orange {
+    color: orange;
+}
+
+.compare-result .percents .green {
+    color: green;
+}
+
+.compare-task-status p {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+}
