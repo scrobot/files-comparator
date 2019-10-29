@@ -25,7 +25,7 @@ class TextCompareController(
         .let { target ->
             when {
                 target.isBlank() -> throw EmptyTargetException
-                target.length > 5000 -> longTextCompareService
+                target.length > 500 -> longTextCompareService
                 else -> ShortTextCompareService()
             }
         }

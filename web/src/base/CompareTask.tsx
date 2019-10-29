@@ -37,15 +37,15 @@ export class CompareTask extends Component<Result> {
     render() {
         return <div className="compare-result">
             <div className="compare-task-status">
-                <p>{this.props.handledTasksCount / this.props.tasksCount * 100}</p>
+                <p>Task handling completed on {(this.props.handledTasksCount / this.props.tasksCount * 100).toFixed(2)}%</p>
             </div>
             <ul>
-                <li>task created at: <span>{new Date(this.props.createdAt)}</span></li>
+                <li>task created at: <span>{new Date(this.props.createdAt).toISOString()}</span></li>
                 <li>time elapsed: <span>{this.props.timeElapsed}ms</span></li>
                 <li>tasks count: <span>{this.props.tasksCount}</span></li>
                 <li>Tasks handled: <span>{this.props.handledTasksCount}</span></li>
             </ul>
-            <p className="percents">Text matches on <span className={this.percentsClassName().toString()}>{this.props.matchPersents}%</span></p>
+            <p className="percents">Text matches on <span className={this.percentsClassName().toString()}>{this.props.matchPersents.toFixed(2)}%</span></p>
         </div>
     }
 

@@ -15,7 +15,7 @@ class LongTextComparisonProcessor(
 ): TextComparisonProcessor {
     
     override fun startHandleTextComparisonTask(id: String?) {
-        val executor = Executors.newFixedThreadPool(16)
+        val executor = Executors.newSingleThreadExecutor()
         
         id?.let(repository::findById)
             ?.ifPresent { task ->
@@ -27,7 +27,7 @@ class LongTextComparisonProcessor(
                         )
                         task.result = TaskResult(
                             timeElapsed = System.currentTimeMillis() - task.createdAt,
-                            percentsMatch = task.subTasks.map { it.taskProcess?.symbolsMatch ?: 0 }.average().toFloat()
+                            percentsMatch = task.subTasks.sumBy { it.taskProcess?.symbolsMatch ?: 0 }.toFloat() / task.sourceText.length * 100
                         )
                         repository.save(task)
                     }
@@ -36,6 +36,8 @@ class LongTextComparisonProcessor(
                     executor.execute(it)
                 }
             }
+        
+        
     }
     
     

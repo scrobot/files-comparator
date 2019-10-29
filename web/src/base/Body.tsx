@@ -4,13 +4,13 @@ import UploadPage from "../upload/UploadPage";
 import UrlPage from "../url/UrlPage";
 import TermsPage from "../terms/TermsPage";
 import PrivacyPolicyPage from "../privacy/PrivacyPolicyPage";
-import HomePage from "../home/HomePage";
+import TextComparePage from "../text/TextComparePage";
 
 const Body: React.FC = () => {
     return (
         <div className="col">
             <Switch>
-                <Route exact path="/" component={HomePage} />
+                <Route exact path="/" component={TextComparePage} />
                 <Route path="/upload" component={UploadPage} />
                 <Route path="/url" component={UrlPage} />
                 <Route path="/terms" component={TermsPage} />

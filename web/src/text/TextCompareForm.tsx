@@ -3,10 +3,10 @@ import "../css/App.css"
 import {Nothing} from "../base/Nothing";
 
 type FormData = {
-    onCommentSubmit: (t: { sourceText: string, targetText: string }) => void;
+    onFormSubmit: (t: { sourceText: string, targetText: string }) => void;
 }
 
-class HomeForm extends React.Component<FormData, Nothing> {
+class TextCompareForm extends React.Component<FormData, Nothing> {
     private readonly sourceText: React.RefObject<HTMLTextAreaElement>;
     private readonly targetText: React.RefObject<HTMLTextAreaElement>;
 
@@ -24,7 +24,7 @@ class HomeForm extends React.Component<FormData, Nothing> {
 
             console.log({source: source, target: target})
 
-            this.props.onCommentSubmit({ sourceText: source, targetText: target });
+            this.props.onFormSubmit({ sourceText: source, targetText: target });
         };
 
         return (
@@ -47,4 +47,4 @@ class HomeForm extends React.Component<FormData, Nothing> {
     }
 }
 
-export default HomeForm;
+export default TextCompareForm;
