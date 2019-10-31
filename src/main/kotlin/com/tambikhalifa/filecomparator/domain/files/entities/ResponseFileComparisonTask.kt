@@ -7,14 +7,10 @@ data class ResponseFileComparisonTask(
     val taskId: String,
     @JsonProperty("created_at")
     val createdAt: Long,
-    @JsonProperty("source_size")
-    val sourceFileSize: Long,
-    @JsonProperty("target_size")
-    val targetFileSize: Long,
     @JsonProperty("tasks_count")
     val tasksCount: Long,
     @JsonProperty("tasks_handled")
-    val tasksHandled: Long,
+    val tasksHandled: Long = 0,
     @JsonProperty("percents_match")
-    val percentsMatch: Float
+    val percentsMatch: Float = 0.0f
 )

@@ -1,15 +1,12 @@
 import React, {Component} from "react";
 import "../css/CompareResult.css"
+import MatchStatus from "../models/MatchStatus";
 
 type Result = {
     sourceLength?: number,
     targetLength?: number,
     symbolsMatch?: number,
     percentsMatch?: number
-}
-
-enum MatchStatus {
-    RED = "red", ORANGE = "orange", GREEN = "green", UNDEFINED = ""
 }
 
 export class CompareResult extends Component<Result> {

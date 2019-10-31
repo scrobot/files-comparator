@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/App.css"
-import {Nothing} from "../base/Nothing";
+import {Nothing} from "../models/Nothing";
 
 type FormData = {
     onFormSubmit: (t: { sourceText: string, targetText: string }) => void;

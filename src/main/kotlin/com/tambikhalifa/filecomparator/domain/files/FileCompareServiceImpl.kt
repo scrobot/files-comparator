@@ -11,6 +11,7 @@ import com.tambikhalifa.filecomparator.extensions.chunkStrings
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
 import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 import java.util.*
 
 @Service
@@ -22,7 +23,7 @@ class FileCompareServiceImpl(
     
     private val encoder = Base64.getEncoder()
     
-    override fun compareFiles(source: MultipartFile, target: MultipartFile): Flux<ResponseFileComparisonTask> = FileComparisonTask(
+    override fun compareFiles(source: MultipartFile, target: MultipartFile): Mono<ResponseFileComparisonTask> = FileComparisonTask(
             id = UUID.randomUUID().toString(),
             sourceFile = encoder.encodeToString(source.bytes),
             targetFile = encoder.encodeToString(target.bytes)
@@ -33,6 +34,15 @@ class FileCompareServiceImpl(
             )
         }
         .let { repository.save(it) }
+        .map { task ->
+            ResponseFileComparisonTask(
+                task.id,
+                task.createdAt,
+                task.subTasks.count().toLong()
+            )
+        }
+    
+    override fun getTasksStream(taskId: String): Flux<ResponseFileComparisonTask> = repository.findById(taskId)
         .flux()
         .flatMapIterable { task -> task.subTasks.map { Pair(task, it) } }
         .doOnNext { (task, subtask) ->
@@ -52,15 +62,12 @@ class FileCompareServiceImpl(
                     ResponseFileComparisonTask(
                         task.id,
                         task.createdAt,
-                        source.size,
-                        target.size,
                         task.subTasks.count().toLong(),
                         it.count().toLong(),
                         it.map { it.symbolsMatch.toFloat() / it.sourceLength * 100 }.average().toFloat()
                     )
                 }
         }
-        
     
     private fun createSubTasks(source: String, target: String): List<SubTask> = chunkStrings(source, target, SOURCE_STRING_CHUNK_SIZE)
         .map { (s, t) ->

@@ -1,6 +1,6 @@
 import React from "react";
 import CompareTask from "../base/CompareTask";
-import {Nothing} from "../base/Nothing";
+import {Nothing} from "../models/Nothing";
 
 type Result = {
     id: string,

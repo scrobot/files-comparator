@@ -4,6 +4,7 @@ import TextCompareForm from "./TextCompareForm";
 import TextCompareResult from "./TextCompareResult";
 import TextCompareTask from "./TextCompareTask";
 import Network from "../base/Network";
+import ResponseWrapper from "../models/ResponseWrapper";
 
 type TextCompareData = {
     result?: CompareResult,
@@ -27,12 +28,6 @@ type CompareTask = {
     handled_tasks_count: number
 }
 
-type TextCompareResponse<T> = {
-    data: T,
-    status: number,
-    statusText: string
-}
-
 class TextComparePage extends Component<{}, TextCompareData> {
 
     private axios = require("axios").default
@@ -42,8 +37,10 @@ class TextComparePage extends Component<{}, TextCompareData> {
             first_text: source,
             second_text: target
         })
-            .then((response: TextCompareResponse<CompareResult>) => {
+            .then((response: ResponseWrapper<CompareResult>) => {
                 console.log(response);
+
+                if(!response.data) return;
 
                 if(response.data.task_id) {
                     this.answerTaskServer(response.data.task_id)
@@ -67,8 +64,10 @@ class TextComparePage extends Component<{}, TextCompareData> {
     answerTaskServer(taskId: string) {
         const interval = setInterval(() => {
             this.axios.get(Network.text_compare_task + "/" + taskId)
-                .then((response: TextCompareResponse<CompareTask>) => {
+                .then((response: ResponseWrapper<CompareTask>) => {
                     console.log(response.data);
+                    if(!response.data) return;
+
                     const result = response.data
 
                     this.setState({

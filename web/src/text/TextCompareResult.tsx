@@ -1,6 +1,6 @@
 import React from "react";
 import CompareResult from "../base/CompareResult";
-import {Nothing} from "../base/Nothing";
+import {Nothing} from "../models/Nothing";
 
 type Result = {
     target_incoming_length: number,

@@ -3,12 +3,10 @@ package com.tambikhalifa.filecomparator.controllers.files
 import com.tambikhalifa.filecomparator.domain.files.FileCompareService
 import com.tambikhalifa.filecomparator.domain.files.entities.ResponseFileComparisonTask
 import org.springframework.http.MediaType
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
 import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 import java.awt.PageAttributes
 
 @RestController
@@ -16,12 +14,17 @@ import java.awt.PageAttributes
 class FileCompareController(
     private val service: FileCompareService
 ) {
-
-    @PostMapping("compare", produces = [MediaType.APPLICATION_STREAM_JSON_VALUE])
+    
+    @CrossOrigin(origins = ["http://localhost:3001"])
+    @PostMapping("compare")
     fun compareFiles(
         @RequestParam("source") source: MultipartFile,
         @RequestParam("target") target: MultipartFile
-    ): Flux<ResponseFileComparisonTask> = service.compareFiles(source, target).log()
-        
+    ): Mono<ResponseFileComparisonTask> = service.compareFiles(source, target).log()
+    
+    @CrossOrigin(origins = ["http://localhost:3001"])
+    @GetMapping("compare/{task-id}", produces = [MediaType.TEXT_EVENT_STREAM_VALUE], headers=["Accept=*/*"])
+    fun getTasksStream(@PathVariable("task-id") taskId: String): Flux<ResponseFileComparisonTask> = service.getTasksStream(taskId).log()
+    
 
 }
