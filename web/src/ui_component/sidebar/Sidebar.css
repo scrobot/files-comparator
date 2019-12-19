@@ -16,3 +16,13 @@
     display: block;
     padding-top: 10px;
 }
+
+.Sidebar ul {
+    list-style: none;
+}
+
+.Sidebar ul li a {
+    color: white;
+    display: block;
+    text-align: left;
+}

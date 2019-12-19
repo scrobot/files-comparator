@@ -1,6 +1,6 @@
 import React from 'react';
-import "../css/WelcomeCard.css"
-import WelcomeCard from "../base/WelcomeCard";
+import "../../ui_component/welcome_card/WelcomeCard.css"
+import WelcomeCard from "../../ui_component/welcome_card/WelcomeCard";
 
 const UrlPage: React.FC = () => {
     return (

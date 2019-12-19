@@ -15,7 +15,7 @@ class LongTextComparisonProcessor(
 ): TextComparisonProcessor {
     
     override fun startHandleTextComparisonTask(id: String?) {
-        val executor = Executors.newSingleThreadExecutor()
+        val executor = Executors.newFixedThreadPool(16)
         
         id?.let(repository::findById)
             ?.ifPresent { task ->
@@ -36,7 +36,6 @@ class LongTextComparisonProcessor(
                     executor.execute(it)
                 }
             }
-        
         
     }
     

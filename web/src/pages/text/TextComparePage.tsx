@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import WelcomeCard from "../base/WelcomeCard";
+import WelcomeCard from "../../ui_component/welcome_card/WelcomeCard";
 import TextCompareForm from "./TextCompareForm";
 import TextCompareResult from "./TextCompareResult";
 import TextCompareTask from "./TextCompareTask";
-import Network from "../base/Network";
-import ResponseWrapper from "../models/ResponseWrapper";
+import Network from "../../models/Network";
+import ResponseWrapper from "../../models/ResponseWrapper";
 
 type TextCompareData = {
     result?: CompareResult,

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import "../css/CompareResult.css"
-import MatchStatus from "../models/MatchStatus";
+import "./CompareResult.css"
+import MatchStatus from "../../models/MatchStatus";
+
 
 type Result = {
     sourceLength?: number,

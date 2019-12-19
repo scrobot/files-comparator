@@ -1,9 +1,9 @@
 import React from 'react';
-import '../css/App.css';
-import Header from "./Header";
-import {Sidebar} from "./Sidebar";
-import Body from "./Body";
-import Footer from "./Footer";
+import './App.css';
+import Header from "../header/Header";
+import Body from "../body/Body";
+import {Sidebar} from "../sidebar/Sidebar";
+import Footer from "../footer/Footer";
 
 const App: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import CompareTask from "../base/CompareTask";
-import {Nothing} from "../models/Nothing";
+import CompareTask from "../../ui_component/compare_task/CompareTask";
+import {Nothing} from "../../models/Nothing";
 
 type Result = {
     id: string,

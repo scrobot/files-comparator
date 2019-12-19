@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "../css/CompareResult.css"
+import "../compare_result/CompareResult.css"
 
 type Result = {
     id: string,

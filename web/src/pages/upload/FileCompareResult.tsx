@@ -1,8 +1,8 @@
 import React from "react";
-import {Nothing} from "../models/Nothing";
-import FileCompareTask from "../models/FileCompareTask";
-import MatchStatus from "../models/MatchStatus";
-import "../css/CompareResult.css"
+import {Nothing} from "../../models/Nothing";
+import FileCompareTask from "../../models/FileCompareTask";
+import MatchStatus from "../../models/MatchStatus";
+import "../../ui_component/compare_result/CompareResult.css"
 
 class FileCompareResult extends React.Component<FileCompareTask, Nothing> {
 

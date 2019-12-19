@@ -1,5 +1,5 @@
 import React from 'react';
-import "../css/Header.css"
+import "./Header.css"
 import { Link } from 'react-router-dom'
 import {Nav, Navbar, NavbarBrand, NavItem, NavLink} from 'reactstrap';
 
@@ -20,6 +20,9 @@ const Header: React.FC = () => {
                         </NavItem>
                         <NavItem>
                             <Link className="nav-link" to="/url">Url</Link>
+                        </NavItem>
+                        <NavItem>
+                            <Link className="nav-link" to="/auth">Login</Link>
                         </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>

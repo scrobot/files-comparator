@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
-import "../css/WelcomeCard.css"
+import "./WelcomeCard.css"
 
 type Card = {
     title?: string,

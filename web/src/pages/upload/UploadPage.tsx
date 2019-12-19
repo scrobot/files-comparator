@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import WelcomeCard from "../base/WelcomeCard";
-import {Nothing} from "../models/Nothing";
+import WelcomeCard from "../../ui_component/welcome_card/WelcomeCard";
+import {Nothing} from "../../models/Nothing";
 import FileCompareForm from "./FileCompareForm";
-import Network from "../base/Network";
-import ResponseWrapper from "../models/ResponseWrapper";
-import FileCompareTask from "../models/FileCompareTask";
+import Network from "../../models/Network";
+import ResponseWrapper from "../../models/ResponseWrapper";
+import FileCompareTask from "../../models/FileCompareTask";
 import FileCompareResult from "./FileCompareResult";
 
 class UploadPage extends Component<Nothing, FileCompareTask> {

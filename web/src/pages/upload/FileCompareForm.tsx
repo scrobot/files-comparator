@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/App.css"
-import {Nothing} from "../models/Nothing";
+import "../../ui_component/app/App.css"
+import {Nothing} from "../../models/Nothing";
 
 type FormData = {
     onFormSubmit: (t: { sourceFile: FileList, targetFile: FileList }) => void;

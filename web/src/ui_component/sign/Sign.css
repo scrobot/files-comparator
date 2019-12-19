@@ -1,0 +1,36 @@
+.auth-form {
+    margin: 0 auto;
+}
+
+.auth-form .auth-header {
+    text-align: center;
+    padding: 16px;
+}
+
+.auth-form .auth-header > * {
+    display: inline-block;
+    text-align: center;
+}
+
+.auth-form .auth-header img {
+    width: 64px;
+    height: 64px;
+    margin-right: 12px;
+}
+
+.auth-form .form-row .form-check {
+    width: 100%;
+}
+
+.auth-form .sign_up_ling {
+    text-align: center;
+    display: block;
+}
+
+.auth-form .form-row > * {
+    margin-top: 12px;
+}
+
+.auth-form .form-row button {
+    margin: 12px auto;
+}
