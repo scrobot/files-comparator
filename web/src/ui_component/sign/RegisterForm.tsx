@@ -12,7 +12,6 @@ const RegisterForm: React.FC = () => {
             <input className="form-control" placeholder="enter your e-mail" />
             <input type="password" className="form-control" placeholder="enter the password" />
             <input type="password" className="form-control" placeholder="repeat the password" />
-
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     </div>

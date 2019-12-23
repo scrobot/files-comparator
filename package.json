@@ -1,0 +1,19 @@
+{
+  "name": "files-comparator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Revonenko94/files-comparator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Revonenko94/files-comparator/issues"
+  },
+  "homepage": "https://github.com/Revonenko94/files-comparator#readme",
+  "description": ""
+}

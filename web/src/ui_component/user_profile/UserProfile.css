@@ -1,0 +1,23 @@
+.user-form {
+    margin: 0 auto;
+    padding: 30px;
+}
+.user-form .user-side  img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+.user-form .user-side .download-history{
+    padding: 50px 10px 0 0;
+}
+.user-form  .change-password{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+.user-form button{
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+
+}
