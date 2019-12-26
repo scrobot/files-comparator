@@ -1,3 +1,6 @@
+.user-header{
+    padding: 30px;
+}
 .user-form {
     margin: 0 auto;
     padding: 30px;
@@ -10,14 +13,13 @@
 .user-form .user-side .download-history{
     padding: 50px 10px 0 0;
 }
-.user-form  .user-newPassword{
+.user-form  .user-new-password{
     display: block;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px auto;
 }
 .user-form button{
     display: block;
     text-align: center;
     margin: 20px auto;
-
 }

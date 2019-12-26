@@ -16,7 +16,6 @@ const PasswordForm: React.FC = () => {
               <label htmlFor="password-confirmation">The new password confirmation</label>
               <input type="text" className="form-control" id="password-confirmation" />
           </div>
-
           <button type="submit" className="btn btn-primary">Submit</button>
       </form>
   </div>

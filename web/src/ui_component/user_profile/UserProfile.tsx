@@ -3,9 +3,9 @@ import './UserProfile.css'
 
 const UserProfile: React.FC = () => {
 return <div className="container">
-    {/*<div className="row user-header">*/}
-        {/*<h1>User name</h1>*/}
-    {/*</div>*/}
+    <div className="row user-header">
+        <h1>User name</h1>
+    </div>
     <div className="row user-form">
         <form>
         <div className="form-row">
@@ -52,7 +52,7 @@ return <div className="container">
             </div>
             </div>
         </div>
-            <a className="user-newPassword" href="/password">Change password</a>
+            <a className="user-new-password" href="/password">Change password</a>
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     </div>
