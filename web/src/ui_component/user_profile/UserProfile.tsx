@@ -3,9 +3,9 @@ import './UserProfile.css'
 
 const UserProfile: React.FC = () => {
 return <div className="container">
-    <div className="row user-header">
-        <h1>User name</h1>
-    </div>
+    {/*<div className="row user-header">*/}
+        {/*<h1>User name</h1>*/}
+    {/*</div>*/}
     <div className="row user-form">
         <form>
         <div className="form-row">
@@ -24,35 +24,35 @@ return <div className="container">
             <div className="col-md-9 form-row user-body">
              <div className="form-group col-md-6">
                 <label htmlFor="userFirstName">First Name</label>
-                <input type="text" className="form-control" id="userFirstName" placeholder="First Name"  />
+                <input type="text" className="form-control" id="userFirstName" defaultValue="First Name"  />
             </div>
             <div className="form-group col-md-6">
                 <label htmlFor="userLastName">Last Name</label>
-                <input type="text" className="form-control" id="userLastName" placeholder="Last Name"  />
+                <input type="text" className="form-control" id="userLastName" defaultValue="Last Name"  />
             </div>
             <div className="form-group col-md-6">
                 <label htmlFor="userEmail">Email</label>
-                <input type="email" className="form-control" id="userEmail" placeholder="Email"  />
+                <input type="email" className="form-control" id="userEmail" defaultValue="Email"  />
             </div>
             <div className="form-group col-md-6">
                 <label htmlFor="userLogin">Login</label>
-                <input type="text" className="form-control" id="userLogin" placeholder="Login"  />
+                <input type="text" className="form-control" id="userLogin" defaultValue="Login"  />
             </div>
             <div className="form-group col-md-6">
                 <label htmlFor="userAge">Age</label>
-                <input type="text" className="form-control" id="userAge" placeholder="Age"  />
+                <input type="text" className="form-control" id="userAge" defaultValue="Age"  />
             </div>
             <div className="form-group col-md-6">
                 <label htmlFor="userGender">Male or female</label>
-                <input type="text" className="form-control" id="userGender" placeholder="Male or female"  />
+                <input type="text" className="form-control" id="userGender" defaultValue="Male or female"  />
             </div>
             <div className="form-group col-md-6">
                 <label htmlFor="userCity">City</label>
-                <input type="text" className="form-control" id="userCity" placeholder="City"  />
+                <input type="text" className="form-control" id="userCity" defaultValue="City"  />
             </div>
             </div>
         </div>
-            <a className="change-password" href="#">Change password</a>
+            <a className="user-newPassword" href="/password">Change password</a>
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     </div>
