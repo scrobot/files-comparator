@@ -8,6 +8,7 @@ import SignInPage from "../../pages/auth/sign_in/SignInPage";
 import SignUpPage from "../../pages/auth/sign_up/SignUpPage";
 import TextComparePage from "../../pages/text/TextComparePage";
 import UserProfilePage from "../../pages/user/UserProfilePage";
+import PasswordForm from "../change_password/PasswordForm";
 
 const Body: React.FC = () => {
     return (
@@ -21,6 +22,7 @@ const Body: React.FC = () => {
                 <Route path="/auth" component={SignInPage} />
                 <Route path="/register" component={SignUpPage} />
                 <Route path="/user" component={UserProfilePage} />
+                <Route path="/password" component={PasswordForm} />
             </Switch>
         </div>
     );
