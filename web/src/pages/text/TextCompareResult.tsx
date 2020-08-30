@@ -1,25 +1,41 @@
 import React from "react";
 import CompareResult from "../../ui_component/compare_result/CompareResult";
 import {Nothing} from "../../models/Nothing";
+import {CompareTaskDetails} from "./comparator.store";
+import {comparatorQuery} from "./comparator.query";
 
-type Result = {
-    target_incoming_length: number,
-    subject_incoming_length: number,
-    symbols_match: number,
-    percents_match: number,
-    task_id?: string
+type State = {
+    details?: CompareTaskDetails
 }
 
-class TextCompareResult extends React.Component<Result, Nothing> {
+class TextCompareResult extends React.Component<Nothing, State> {
+
+    componentDidMount() {
+        comparatorQuery.select()
+            .subscribe(state => {
+                console.log(state)
+
+                this.setState({
+                    details: state.details
+                });
+            })
+    }
 
     render() {
+        if(this.state == undefined) return null
+
+        const details = this.state.details
+        console.log(details)
+
+        if(details == undefined) return null
+
         return (
-            <div className={this.props.task_id ? "hidden" : "visible"}>
+            <div className={"visible"}>
                 <CompareResult
-                    sourceLength={this.props.target_incoming_length}
-                    targetLength={this.props.subject_incoming_length}
-                    symbolsMatch={this.props.symbols_match}
-                    percentsMatch={this.props.percents_match}
+                    sourceLength={details.target_incoming_length}
+                    targetLength={details.subject_incoming_length}
+                    symbolsMatch={details.symbols_match}
+                    percentsMatch={details.percents_match}
                 />
             </div>
         );

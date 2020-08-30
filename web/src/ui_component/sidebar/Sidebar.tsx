@@ -15,20 +15,7 @@ export class Sidebar extends Component<HistoryTasks> {
 
     static defaultProps = {
         size: 1,
-        tasks: [
-            {
-                id: '1',
-                name: 'test'
-            },
-            {
-                id: '2',
-                name: 'test 2'
-            },
-            {
-                id: '3',
-                name: 'test 3'
-            }
-        ]
+        tasks: []
     };
 
     render() {

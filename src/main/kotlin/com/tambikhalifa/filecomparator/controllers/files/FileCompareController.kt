@@ -15,14 +15,14 @@ class FileCompareController(
     private val service: FileCompareService
 ) {
     
-    @CrossOrigin(origins = ["http://localhost:3001"])
+    @CrossOrigin(origins = ["http://localhost:3000"])
     @PostMapping("compare")
     fun compareFiles(
         @RequestParam("source") source: MultipartFile,
         @RequestParam("target") target: MultipartFile
     ): Mono<ResponseFileComparisonTask> = service.compareFiles(source, target).log()
     
-    @CrossOrigin(origins = ["http://localhost:3001"])
+    @CrossOrigin(origins = ["http://localhost:3000"])
     @GetMapping("compare/{task-id}", produces = [MediaType.TEXT_EVENT_STREAM_VALUE], headers=["Accept=*/*"])
     fun getTasksStream(@PathVariable("task-id") taskId: String): Flux<ResponseFileComparisonTask> = service.getTasksStream(taskId).log()
     

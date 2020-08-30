@@ -1,28 +1,42 @@
 import React from "react";
 import CompareTask from "../../ui_component/compare_task/CompareTask";
 import {Nothing} from "../../models/Nothing";
+import {CompareTaskResult} from "./comparator.store";
+import {comparatorQuery} from "./comparator.query";
 
-type Result = {
-    id: string,
-    created_at: number,
-    time_elapsed: number,
-    match: number,
-    tasks_count: number,
-    handled_tasks_count: number
+type State = {
+    result?: CompareTaskResult
 }
 
-class TextCompareTask extends React.Component<Result, Nothing> {
+class TextCompareTask extends React.Component<Nothing, State> {
+
+    componentDidMount() {
+        comparatorQuery.select()
+            .subscribe(state => {
+                this.setState({
+                    result: state.result
+                });
+            })
+    }
 
     render() {
+        if(this.state == undefined) return null
+
+        const result = this.state.result
+        console.log(result)
+
+        if(result == undefined) return null
+
+
         return (
-            <div className={this.props != null ? "visible" : "hidden"}>
+            <div className={"visible"}>
                 <CompareTask
-                    id={this.props.id}
-                    createdAt={this.props.created_at}
-                    timeElapsed={this.props.time_elapsed}
-                    matchPersents={this.props.match}
-                    tasksCount={this.props.tasks_count}
-                    handledTasksCount={this.props.handled_tasks_count}
+                    id={result.id}
+                    createdAt={result.created_at}
+                    timeElapsed={result.time_elapsed}
+                    matchPersents={result.match}
+                    tasksCount={result.tasks_count}
+                    handledTasksCount={result.handled_tasks_count}
                 />
             </div>
         );

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@datorama/akita": "^5.2.3",
+    "@reactivex/rxjs": "^6.6.2",
     "@types/axios": "^0.14.0",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.12",
@@ -16,7 +18,7 @@
     "react-dom": "^16.10.2",
     "react-loader-spinner": "^3.1.4",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^3.4.3",
     "reactstrap": "^8.0.1",
     "typescript": "3.6.4"
   },
@@ -40,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "akitaCli": {
+    "idKey": "_id",
+    "customFolderName": "true",
+    "template": "ts"
   }
 }

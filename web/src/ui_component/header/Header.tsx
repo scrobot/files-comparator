@@ -21,12 +21,12 @@ const Header: React.FC = () => {
                         <NavItem>
                             <Link className="nav-link" to="/url">Url</Link>
                         </NavItem>
-                        <NavItem>
+                       {/* <NavItem>
                         <Link className="nav-link" to="/auth">Login</Link>
                         </NavItem>
                         <NavItem>
                             <Link className="nav-link" to="/user">Profile</Link>
-                        </NavItem>
+                        </NavItem>*/}
 
                     </Nav>
                     <Nav className="ml-auto" navbar>

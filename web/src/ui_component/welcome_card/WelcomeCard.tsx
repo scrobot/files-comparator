@@ -14,7 +14,7 @@ export class WelcomeCard extends Component<Card> {
 
     render() {
         return <div className="welcome-board">
-            <img className="icon" src={process.env.PUBLIC_URL + '/files.svg'}/>
+            <img alt={""} className="icon" src={process.env.PUBLIC_URL + '/files.svg'}/>
             <div className="content">
                 <h1>{this.props.title}</h1>
                 <p>
